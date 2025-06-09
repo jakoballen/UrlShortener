@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple URL Shortener</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    input, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+    }
+    #result {
+      font-weight: bold;
+      word-break: break-word;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    #short-url {
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+      flex-grow: 1;
+      overflow-wrap: anywhere;
+    }
+    #copy-btn {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple URL Shortener</h1>
+  <form id="shorten-form">
+    <input id="longUrl" name="url" type="url" placeholder="Enter a long URL" required />
+    <button type="submit">Shorten</button>
+  </form>
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

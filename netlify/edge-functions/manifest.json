@@ -1,0 +1,8 @@
+{
+  "functions": [
+    {
+      "path": "/:short_id",
+      "function": "redirect"
+    }
+  ]
+}
