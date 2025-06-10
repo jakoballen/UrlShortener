@@ -2,7 +2,7 @@
 
 A lightweight URL shortener built with **AWS Lambda**, **DynamoDB**, and **Netlify**. Paste a long URL, get a short one — just like that.
 
-**Live Demo**: [t-9.cc](https://t-9.cc) *(or your Netlify site)*  
+**Live Demo**: [t-9.cc](https://t-9.cc)
 **Repo**: [jakoballen/UrlShortener](https://github.com/jakoballen/UrlShortener)
 
 ---
