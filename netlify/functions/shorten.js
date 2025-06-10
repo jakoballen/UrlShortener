@@ -18,9 +18,10 @@ exports.handler = async (event) => {
   }
 
   try {
-    const awsResponse = await fetch('https://f8n273yvq5.execute-api.us-east-2.amazonaws.com/test_v1/shorten', {
+    const API_URL = process.env.SHORTEN_API_URL;
+    const awsResponse = await fetch('${API_URL}', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json','x-api-key': process.env.SHORTEN_API_KEY},
       body: JSON.stringify({ url }),
     });
 
