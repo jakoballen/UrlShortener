@@ -5,47 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Simple URL Shortener</title>
   <style>
+    /* Dark lava lamp background with subtle glowing radial gradients */
     body {
+      margin: 0;
+      height: 100vh;
+      background:
+        radial-gradient(circle at 20% 20%, #ff6f91 15%, transparent 40%),
+        radial-gradient(circle at 80% 40%, #845ec2 20%, transparent 50%),
+        radial-gradient(circle at 40% 80%, #d65db1 20%, transparent 50%);
+      background-size: 200% 200%;
+      animation: lavaLamp 15s ease-in-out infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-family: Arial, sans-serif;
-      padding: 2rem;
-      max-width: 600px;
-      margin: auto;
+      color: #eee;
     }
+
+    @keyframes lavaLamp {
+      0%, 100% {
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+      }
+      50% {
+        background-position: 100% 100%, 0% 0%, 80% 80%;
+      }
+    }
+
+    /* Centered card with dark translucent background */
+    .card {
+      background: rgba(30, 30, 30, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(200, 100, 200, 0.5);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
     input, button {
-      padding: 0.5rem;
+      padding: 0.6rem;
       font-size: 1rem;
       width: 100%;
       margin-bottom: 1rem;
       box-sizing: border-box;
+      border: 1px solid #666;
+      border-radius: 8px;
+      background: #222;
+      color: #eee;
     }
+
+    input::placeholder {
+      color: #aaa;
+    }
+
+    button {
+      background-color: #a463f2;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #7d3ce0;
+    }
+
     #result {
       font-weight: bold;
       word-break: break-word;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      color: #ddd;
     }
+
     #short-url {
-      color: blue;
+      color: #a463f2;
       text-decoration: underline;
       cursor: pointer;
-      flex-grow: 1;
       overflow-wrap: anywhere;
     }
+
     #copy-btn {
       padding: 0.3rem 0.6rem;
       font-size: 0.9rem;
       cursor: pointer;
+      background-color: #444;
+      border: 1px solid #666;
+      border-radius: 4px;
+      color: #eee;
     }
   </style>
 </head>
 <body>
-  <h1>Simple URL Shortener</h1>
-  <form id="shorten-form">
-    <input id="longUrl" name="url" type="url" placeholder="Enter a long URL" required />
-    <button type="submit">Shorten</button>
-  </form>
-  <div id="result"></div>
+  <div class="card">
+    <h1>URL Shortener</h1>
+    <form id="shorten-form">
+      <input id="longUrl" name="url" type="url" placeholder="Enter a long URL" required />
+      <button type="submit">Shorten</button>
+    </form>
+    <div id="result"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
